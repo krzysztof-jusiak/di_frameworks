@@ -1,0 +1,9 @@
+[submodule "frameworks/boost.di"]
+	path = frameworks/boost.di
+	url = https://github.com/krzysztof-jusiak/di.git
+[submodule "frameworks/google.fruit"]
+	path = frameworks/google.fruit
+	url = https://github.com/google/fruit.git
+[submodule "frameworks/dicpp"]
+	path = frameworks/dicpp
+	url = https://bitbucket.org/cheez/dicpp.git
