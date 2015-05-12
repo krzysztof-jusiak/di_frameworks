@@ -26,7 +26,8 @@ run_dicpp:
 clean_fruit:
 
 build_fruit:
-	clang++ fruit.cpp -O2 -I ../../frameworks/google.fruit/include -std=c++11 ../../frameworks/google.fruit/src/*.cpp -o fruit.out
+	clang++ fruit.cpp -O2 -I ../../frameworks/google.fruit/include -std=c++11 ../../frameworks/google.fruit/src/*.cpp -ftemplate-depth=2000 -o fruit.out
+
 run_frui:
 	./fruit.out
 
