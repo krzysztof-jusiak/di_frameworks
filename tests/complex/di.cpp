@@ -217,6 +217,8 @@ struct small_complexity { BOOST_DI_INJECT(small_complexity, x32) { } };
 struct medium_complexity { BOOST_DI_INJECT(medium_complexity, x99) { } };
 struct big_complexity { BOOST_DI_INJECT(big_complexity, c0, c1, c2, c3, c4, c5, c6, c7, c8, c9) { } };
 
+namespace di = boost::di;
+
 struct module {
     auto configure() const noexcept {
         return di::make_injector(
@@ -323,8 +325,6 @@ struct module {
         );
     }
 };
-
-namespace di = boost::di;
 
 int main() {
     auto injector = di::make_injector(module{});
