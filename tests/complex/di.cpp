@@ -1,7 +1,5 @@
 #include <boost/di.hpp>
 
-namespace di = boost::di;
-
 struct x00 { BOOST_DI_INJECT(x00) { } };
 struct x01 { BOOST_DI_INJECT(x01, x00) { } };
 struct x02 { BOOST_DI_INJECT(x02, x00, x01) { } };
@@ -325,6 +323,8 @@ struct module {
         );
     }
 };
+
+namespace di = boost::di;
 
 int main() {
     auto injector = di::make_injector(module{});

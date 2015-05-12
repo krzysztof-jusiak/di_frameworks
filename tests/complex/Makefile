@@ -2,10 +2,10 @@ guice_clean:
 	rm -f *.class
 
 guice_build: guice_clean
-	javac -cp .:`ls ../../frameworks/guice/*.jar | xargs | tr ' ' ':'` guice.java
+	javac -cp .:`ls ../../frameworks/google.guice/*.jar | xargs | tr ' ' ':'` guice.java
 
 guice_test:
-	java -cp .:`ls ../../frameworks/guice/*.jar | xargs | tr ' ' ':'` guice
+	java -cp .:`ls ../../frameworks/google.guice/*.jar | xargs | tr ' ' ':'` guice
 
 di_clean:
 
