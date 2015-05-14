@@ -35,9 +35,9 @@ run_fruit:
 	./fruit.out
 
 clean_dagger2:
-	rm -f dagger2
+	rm -rf dagger2
 
-build_dagger2:
+build_dagger2: clean_dagger2
 	mkdir dagger2
 	javac -d dagger2 -cp .:`ls ../../frameworks/dagger2/*.jar | xargs | tr ' ' ':'` dagger2.java
 
