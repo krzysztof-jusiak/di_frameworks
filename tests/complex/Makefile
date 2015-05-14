@@ -54,5 +54,14 @@ build_dagger2: clean_dagger2
 run_dagger2:
 	cd dagger2 && java -cp dagger2:`ls ../../../frameworks/dagger2/*.jar | xargs | tr ' ' ':'` dagger2
 
+clean_ninject:
+	rm -f *.exe
+
+build_ninject: clean_dagger2
+	csc /r:../../frameworks/ninject/Ninject.dll ninject.cs data/data.cs
+
+run_dagger2:
+	./ninject.exe
+
 clean: clean_guice clean_dagger2 clean_di clean_di_auto clean_dicpp clean_fruit
 
