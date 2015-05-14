@@ -6,7 +6,7 @@ build_guice: clean_guice
 	javac -cp .:`ls ../../frameworks/google.guice/*.jar | xargs | tr ' ' ':'` guice.java data/data_inject_guice.java -d guice
 
 run_guice:
-	java -cp guice:`ls ../../frameworks/google.guice/*.jar | xargs | tr ' ' ':'` guice
+	cd guice && java -cp .:`ls ../../../frameworks/google.guice/*.jar | xargs | tr ' ' ':'` guice
 
 clean_di:
 	rm -f di.out
@@ -52,7 +52,7 @@ build_dagger2: clean_dagger2
 	javac -d dagger2 -cp .:`ls ../../frameworks/dagger2/*.jar | xargs | tr ' ' ':'` dagger2.java data/data_inject_dagger2.java
 
 run_dagger2:
-	cd dagger2 && java -cp dagger2:`ls ../../../frameworks/dagger2/*.jar | xargs | tr ' ' ':'` dagger2
+	cd dagger2 && java -cp .:`ls ../../../frameworks/dagger2/*.jar | xargs | tr ' ' ':'` dagger2
 
 clean_ninject:
 	rm -f *.exe
@@ -60,7 +60,7 @@ clean_ninject:
 build_ninject: clean_dagger2
 	csc /r:../../frameworks/ninject/Ninject.dll ninject.cs data/data.cs
 
-run_dagger2:
+run_ninject:
 	./ninject.exe
 
 clean: clean_guice clean_dagger2 clean_di clean_di_auto clean_dicpp clean_fruit
