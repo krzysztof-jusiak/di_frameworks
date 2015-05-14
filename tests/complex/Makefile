@@ -58,7 +58,8 @@ clean_ninject:
 	rm -f *.exe
 
 build_ninject: clean_dagger2
-	csc /r:../../frameworks/ninject/Ninject.dll ninject.cs data/data.cs
+	msc /r:../../frameworks/ninject/Ninject.dll ninject.cs data/data.cs
+	#csc /r:../../frameworks/ninject/Ninject.dll ninject.cs data/data.cs
 
 run_ninject:
 	./ninject.exe
