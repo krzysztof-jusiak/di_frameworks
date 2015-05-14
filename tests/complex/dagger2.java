@@ -1,5 +1,4 @@
 import dagger.*;
-import javax.inject.Inject;
 
 @Module
 class AppModule {
