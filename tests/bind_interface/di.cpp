@@ -14,7 +14,7 @@ struct module {
 
 int main() {
     auto injector = di::make_injector(module{});
-    auto object = injector.create<std::unique_ptr<I>>();
+    std::unique_ptr<I> object{injector.create<I*>()};
     object->dummy();
 }
 
