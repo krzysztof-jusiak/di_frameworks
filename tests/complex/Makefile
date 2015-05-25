@@ -12,7 +12,7 @@ clean_di:
 	rm -f di.out
 
 build_di:
-	/opt/clang/clang-3.4/bin/clang++ -std=c++1y -I ../../frameworks/boost.di/include -include data/data_inject_di.hpp -O2 di.cpp -o di.out
+	clang++ -std=c++1y -I ../../frameworks/boost.di/include -include data/data_inject_di.hpp di.cpp -o di.out
 
 run_di:
 	./di.out
@@ -21,7 +21,7 @@ clean_di_auto:
 	rm -f di_auto.out
 
 build_di_auto:
-	/opt/clang/clang-3.4/bin/clang++ -std=c++1y -I ../../frameworks/boost.di/include -include data/data.hpp -O2 di.cpp -o di_auto.out
+	clang++ -std=c++1y -I ../../frameworks/boost.di/include -include data/data.hpp -O2 di.cpp -o di_auto.out
 
 run_di_auto:
 	./di_auto.out
